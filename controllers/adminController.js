@@ -10,6 +10,15 @@ const viewStudent = async (req, res) => {
   });
 };
 
+const viewDashboard = async (req, res) => {
+  res.render("admin/dashboard/view_dashboard");
+};
+const viewLaporan = async (req, res) => {
+  res.render("error");
+};
+
 module.exports = {
   viewStudent,
+  viewDashboard,
+  viewLaporan,
 };
