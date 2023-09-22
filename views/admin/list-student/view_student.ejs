@@ -18,9 +18,10 @@
 
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-4 text-gray-800">Bank</h1>
+                <h1 class="h3 mb-4 text-gray-800">Daftar Siswa</h1>
                 <!-- End Heading -->
 
+                <%- include('table_student.ejs') %>
 
             </div>
             <!-- /.container-fluid -->
@@ -61,18 +62,32 @@
     </div>
 </div>
 
-
+<%- include('modal_add_student.ejs') %>
+<%- include('modal_edit_student.ejs') %>
 <%- include('../../partials/js.ejs') %>
+
 <script>
     $('#dataTable').on('click', '.button-update', function () {
         let id = $(this).data('id');
-        let name = $(this).data('name');
-        let nameBank = $(this).data('namebank');
-        let nomorRekening = $(this).data('nomorrekening');
+        let nama = $(this).data('nama');
+        let tanggal_lahir = $(this).data('tanggal-lahir');
+        let alamat = $(this).data('alamat');
+        let no_hp = $(this).data('no_hp');
+        let ortu_nama = $(this).data('ortu-nama');
+        let ortu_pekerjaan = $(this).data('ortu-pekerjaan');
+        let ortu_alamat = $(this).data('ortu-alamat');
+        let ortu_hp = $(this).data('ortu-no_hp');
+        let ortu_hubungan = $(this).data('ortu-hubungan');
         $('#edit-modal').modal('show');
         $('.id').val(id);
-        $('.name').val(name);
-        $('.nameBank').val(nameBank);
-        $('.nomorRekening').val(nomorRekening);
+        $('.nama').val(nama);
+        $('.tanggal_lahir').val(tanggal_lahir);
+        $('.alamat').val(alamat);
+        $('.no_hp').val(no_hp);
+        $('.ortu_nama').val(ortu_nama);
+        $('.ortu_pekerjaan').val(ortu_pekerjaan);
+        $('.ortu_hp').val(ortu_hp);
+        $('.ortu_hubungan').val(ortu_hubungan);
+        $('.ortu_alamat').val(ortu_alamat);
     })
 </script>

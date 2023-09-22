@@ -1,0 +1,58 @@
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">
+            <i class="fas fa-plus"></i>
+        </button>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>No Absen</th>
+                        <th>Nama</th>
+                        <th>Tanggal Lahir</th>
+                        <th>Alamat</th>
+                        <th>No. HP</th>
+                        <th>Orang tua</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% console.log(student) %>
+                    <% for(let i = 0; i < student.length; i++){ %>
+                    <tr>
+                        <td><%= i + 1 %></td>
+                        <td><%= student[i].no_absen %></td>
+                        <td><%= student[i].nama %></td>
+                        <td><%= student[i].tanggal_lahir %></td>
+                        <td><%= student[i].alamat %></td>
+                        <td><%= student[i].no_hp %></td>
+                        <td><%= student[i].orang_tua.nama %></td>
+                        <td>
+                            <form action="/admin/bank/<%= student[i].id %>?_method=DELETE" method="POST">
+                                <a href="javascript:void();" type="button"
+                                    class="btn btn-warning btn-circle btn-sm button-update"
+                                    data-id="<%= student[i].no %>" data-nama="<%= student[i].nama %>"
+                                    data-tanggal-lahir="<%= student[i].tanggal_lahir %>"
+                                    data-alamat="<%= student[i].alamat %>" data-no_hp="<%= student[i].no_hp %>"
+                                    data-ortu-nama="<%= student[i].orang_tua.nama %>"
+                                    data-ortu-pekerjaan="<%= student[i].orang_tua.pekerjaan %>"
+                                    data-ortu-alamat="<%= student[i].orang_tua.alamat %>"
+                                    data-ortu-no_hp="<%= student[i].orang_tua.no_hp %>"
+                                    data-ortu-hubungan="<%= student[i].orang_tua.hubungan %>" "><i
+                    class=" fas fa-edit"></i></a>
+                                <button type="submit" class="btn btn-danger btn-circle btn-sm"><i
+                                        class="fas fa-trash"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% } %>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>

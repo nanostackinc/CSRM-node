@@ -1,0 +1,33 @@
+{
+    "students": [{
+            "no": 1,
+            "no_absen": "001",
+            "nama": "John Doe",
+            "tanggal_lahir": "1990-01-01",
+            "alamat": "Jl. Contoh No. 123",
+            "no_hp": "081234567890",
+            "orang_tua": {
+                "nama": "Mary Doe",
+                "hubungan": "Ibu",
+                "pekerjaan": "Guru",
+                "alamat": "Jl. Contoh No. 124",
+                "no_hp": "081234567891"
+            }
+        },
+        {
+            "no": 2,
+            "no_absen": "002",
+            "nama": "Jane Smith",
+            "tanggal_lahir": "1995-05-15",
+            "alamat": "Jl. Test No. 456",
+            "no_hp": "081234567891",
+            "orang_tua": {
+                "nama": "David Smith",
+                "hubungan": "Ayah",
+                "pekerjaan": "Dokter",
+                "alamat": "Jl. Test No. 457",
+                "no_hp": "081234567892"
+            }
+        }
+    ]
+}
