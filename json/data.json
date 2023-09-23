@@ -8,7 +8,7 @@
             "no_hp": "081234567890",
             "orang_tua": {
                 "nama": "Mary Doe",
-                "hubungan": "Ibu",
+                "relationId": "2",
                 "pekerjaan": "Guru",
                 "alamat": "Jl. Contoh No. 124",
                 "no_hp": "081234567891"
@@ -23,11 +23,27 @@
             "no_hp": "081234567891",
             "orang_tua": {
                 "nama": "David Smith",
-                "hubungan": "Ayah",
+                "relationId": "1",
                 "pekerjaan": "Dokter",
                 "alamat": "Jl. Test No. 457",
                 "no_hp": "081234567892"
             }
         }
+    ],
+
+    "relation": [{
+            "id": "1",
+            "name": "Ayah"
+        },
+        {
+            "id": "2",
+            "name": "Ibu"
+        },
+        {
+            "id": "3",
+            "name": "Wali"
+        }
     ]
+
+
 }

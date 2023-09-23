@@ -21,7 +21,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% console.log(student) %>
                     <% for(let i = 0; i < student.length; i++){ %>
                     <tr>
                         <td><%= i + 1 %></td>
@@ -30,9 +29,14 @@
                         <td><%= student[i].tanggal_lahir %></td>
                         <td><%= student[i].alamat %></td>
                         <td><%= student[i].no_hp %></td>
-                        <td><%= student[i].orang_tua.nama %></td>
+                        <td><a href="javascript:void();" id="show-parents" type="button"
+                                style="text-decoration: none;color:#858796;" data-nama="<%= student[i].orang_tua.nama%>"
+                                data-hubungan="<%= student[i].orang_tua.relationId%>"
+                                data-pekerjaan="<%= student[i].orang_tua.pekerjaan%>"
+                                data-alamat="<%= student[i].orang_tua.alamat%>" data-id="<%= student[i].no %>"
+                                data-no-hp="<%= student[i].orang_tua.no_hp%>"><%= student[i].orang_tua.nama %></a></td>
                         <td>
-                            <form action="/admin/bank/<%= student[i].id %>?_method=DELETE" method="POST">
+                            <form action="/admin/class/">
                                 <a href="javascript:void();" type="button"
                                     class="btn btn-warning btn-circle btn-sm button-update"
                                     data-id="<%= student[i].no %>" data-nama="<%= student[i].nama %>"
@@ -42,7 +46,7 @@
                                     data-ortu-pekerjaan="<%= student[i].orang_tua.pekerjaan %>"
                                     data-ortu-alamat="<%= student[i].orang_tua.alamat %>"
                                     data-ortu-no_hp="<%= student[i].orang_tua.no_hp %>"
-                                    data-ortu-hubungan="<%= student[i].orang_tua.hubungan %>" "><i
+                                    data-ortu-hubungan="<%= student[i].orang_tua.relationId %>" "><i
                     class=" fas fa-edit"></i></a>
                                 <button type="submit" class="btn btn-danger btn-circle btn-sm"><i
                                         class="fas fa-trash"></i></button>

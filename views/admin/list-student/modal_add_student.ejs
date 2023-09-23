@@ -51,9 +51,14 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="name">Hubungan Orang Tua</label>
-                                <input type="text" class="form-control " name="ortu_hubungan"
-                                    placeholder="Masukan Hubungan Orang Tua" required>
+                                <select class="form-control" name="ortu_hubungan" required>
+                                    <option value="">Pilih Hubungan Orang Tua</option>
+                                    <% relationData.forEach(function(relation) { %>
+                                    <option value="<%= relation.id %>"><%= relation.name %></option>
+                                    <% }); %>
+                                </select>
                             </div>
+
                             <div class="form-group">
                                 <label for="name">Alamat Orang Tua</label>
                                 <input type="text" class="form-control " name="ortu_alamat"

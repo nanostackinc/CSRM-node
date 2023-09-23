@@ -1,12 +1,13 @@
 const dataStudent = require("../json/data.json");
 
 const viewStudent = async (req, res) => {
-  // Membuat objek data yang akan dikirimkan ke tampilan
-  //   console.log(dataStudent);
+  const relationData = dataStudent.relation;
   const student = dataStudent.students;
   // Mengirimkan data ke tampilan
+  // console.log(relationData);
   res.render("admin/list-student/view_student", {
     student,
+    relationData,
   });
 };
 

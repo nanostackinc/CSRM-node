@@ -52,9 +52,27 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="name">Hubungan Orang Tua</label>
-                                <input type="text" class="form-control ortu_hubungan" name="ortu_hubungan"
-                                    placeholder="Masukan Hubungan Orang Tua" required>
+                                <select class="form-control" name="ortu_hubungan" id="ortu_hubungan" required>
+                                    <option value="">Pilih Hubungan Orang Tua</option>
+
+                                    <option class="ortu_hubungan"></option>
+
+                                </select>
                             </div>
+                            <script>
+                                // Mendapatkan elemen dengan class "ortu_hubungan"
+                                var ortuHubunganElement = document.querySelector('.ortu_hubungan');
+
+                                // Mendapatkan nilai dari elemen "ortu_hubungan"
+                                var ortuHubunganValue = ortuHubunganElement.value;
+
+                                // Menampilkan nilai dalam konsol
+                                console.log(ortuHubunganValue);
+                            </script>
+
+
+
+
                             <div class="form-group">
                                 <label for="name">Alamat Orang Tua</label>
                                 <input type="text" class="form-control ortu_alamat" name="ortu_alamat"

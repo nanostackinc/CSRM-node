@@ -20,7 +20,7 @@
                 <!-- Page Heading -->
                 <h1 class="h3 mb-4 text-gray-800">Daftar Siswa</h1>
                 <!-- End Heading -->
-
+                <%- include('../../partials/alerts.ejs') %>
                 <%- include('table_student.ejs') %>
 
             </div>
@@ -64,6 +64,7 @@
 
 <%- include('modal_add_student.ejs') %>
 <%- include('modal_edit_student.ejs') %>
+<%- include('modal_show_parents.ejs') %>
 <%- include('../../partials/js.ejs') %>
 
 <script>
@@ -89,5 +90,31 @@
         $('.ortu_hp').val(ortu_hp);
         $('.ortu_hubungan').val(ortu_hubungan);
         $('.ortu_alamat').val(ortu_alamat);
+    })
+</script>
+<script>
+    $('#dataTable').on('click', '#show-parents', function () {
+        let id = $(this).data('id');
+        let ortu_nama = $(this).data('nama');
+        let ortu_pekerjaan = $(this).data('pekerjaan');
+        let ortu_alamat = $(this).data('alamat');
+        let ortu_hp = $(this).data('no-hp');
+        let ortu_hubungan = $(this).data('hubungan');
+        // Set nilai ortu_hubungan dalam file pertama
+
+
+        // Buat custom event untuk mengirim nilai
+        var event = new CustomEvent("sendOrtuHubungan", {
+            detail: ortu_hubungan
+        });
+        document.dispatchEvent(event);
+
+
+        $('#show-modal').modal('show', ortu_hubungan);
+
+        $('.ortu_nama').text(ortu_nama);
+        $('.ortu_pekerjaan').text(ortu_pekerjaan);
+        $('.ortu_hp').text(ortu_hp);
+        $('.ortu_alamat').text(ortu_alamat);
     })
 </script>
