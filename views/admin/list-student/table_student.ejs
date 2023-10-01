@@ -34,22 +34,22 @@
                                 data-hubungan="<%= student[i].orang_tua.relationId%>"
                                 data-pekerjaan="<%= student[i].orang_tua.pekerjaan%>"
                                 data-alamat="<%= student[i].orang_tua.alamat%>" data-id="<%= student[i].no %>"
-                                data-no-hp="<%= student[i].orang_tua.no_hp%>"><%= student[i].orang_tua.nama %></a></td>
+                                data-ortu-hubungan="<%= student[i].orang_tua.relationId %>"
+                                data-no-hp="<%= student[i].orang_tua.no_hp%>" "><%= student[i].orang_tua.nama %></a></td>
                         <td>
-                            <form action="/admin/class/">
-                                <a href="javascript:void();" type="button"
-                                    class="btn btn-warning btn-circle btn-sm button-update"
-                                    data-id="<%= student[i].no %>" data-nama="<%= student[i].nama %>"
-                                    data-tanggal-lahir="<%= student[i].tanggal_lahir %>"
-                                    data-alamat="<%= student[i].alamat %>" data-no_hp="<%= student[i].no_hp %>"
-                                    data-ortu-nama="<%= student[i].orang_tua.nama %>"
-                                    data-ortu-pekerjaan="<%= student[i].orang_tua.pekerjaan %>"
-                                    data-ortu-alamat="<%= student[i].orang_tua.alamat %>"
-                                    data-ortu-no_hp="<%= student[i].orang_tua.no_hp %>"
-                                    data-ortu-hubungan="<%= student[i].orang_tua.relationId %>" "><i
+
+                            <form action="/admin/class/"> <a href="javascript:void();" type="button"
+                                class="btn btn-warning btn-circle btn-sm button-update" data-id="<%= student[i].no %>"
+                                data-nama="<%= student[i].nama %>" data-tanggal-lahir="<%= student[i].tanggal_lahir %>"
+                                data-alamat="<%= student[i].alamat %>" data-no_hp="<%= student[i].no_hp %>"
+                                data-ortu-nama="<%= student[i].orang_tua.nama %>"
+                                data-ortu-pekerjaan="<%= student[i].orang_tua.pekerjaan %>"
+                                data-ortu-alamat="<%= student[i].orang_tua.alamat %>"
+                                data-ortu-no_hp="<%= student[i].orang_tua.no_hp %>"
+                                data-ortu-hubungan="<%= student[i].orang_tua.relationId %>" "><i
                     class=" fas fa-edit"></i></a>
-                                <button type="submit" class="btn btn-danger btn-circle btn-sm"><i
-                                        class="fas fa-trash"></i></button>
+                            <button type="submit" class="btn btn-danger btn-circle btn-sm"><i
+                                    class="fas fa-trash"></i></button>
                             </form>
                         </td>
                     </tr>

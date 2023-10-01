@@ -88,7 +88,7 @@
         $('.ortu_nama').val(ortu_nama);
         $('.ortu_pekerjaan').val(ortu_pekerjaan);
         $('.ortu_hp').val(ortu_hp);
-        $('.ortu_hubungan').val(ortu_hubungan);
+        $('.ortu_hubungan').text(ortu_hubungan);
         $('.ortu_alamat').val(ortu_alamat);
     })
 </script>
@@ -99,19 +99,18 @@
         let ortu_pekerjaan = $(this).data('pekerjaan');
         let ortu_alamat = $(this).data('alamat');
         let ortu_hp = $(this).data('no-hp');
-        let ortu_hubungan = $(this).data('hubungan');
-        // Set nilai ortu_hubungan dalam file pertama
+        let ortu_hubungan = $(this).data('ortu-hubungan');
 
-
-        // Buat custom event untuk mengirim nilai
-        var event = new CustomEvent("sendOrtuHubungan", {
-            detail: ortu_hubungan
-        });
-        document.dispatchEvent(event);
-
-
-        $('#show-modal').modal('show', ortu_hubungan);
-
+        $('#show-modal').modal('show');
+        if (ortu_hubungan === 1) {
+            $('.ortu_hubungan').text("Ayah");
+        } else if (ortu_hubungan === 2) {
+            $('.ortu_hubungan').text("Ibu");
+        } else if (ortu_hubungan === 3) {
+            $('.ortu_hubungan').text("Wali");
+        } else {
+            $('.ortu_hubungan').text("data tidak ditemukan");
+        }
         $('.ortu_nama').text(ortu_nama);
         $('.ortu_pekerjaan').text(ortu_pekerjaan);
         $('.ortu_hp').text(ortu_hp);
