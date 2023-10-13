@@ -52,25 +52,41 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="name">Hubungan Orang Tua</label>
-                                <select class="form-control" name="ortu_hubungan" id="ortu_hubungan" required>
-                                    <option value="">Pilih Hubungan Orang Tua</option>
-
-                                    <option class="ortu_hubungan">Ayah</option>
-                                    <option class="ortu_hubungan">Ibu</option>
-                                    <option class="ortu_hubungan">Wali</option>
-
-                                </select>
+                                <div class="hubungan">
+                                    <select id="hubungan" class="form-control">
+                                        <!-- Elemen <option> akan ditambahkan melalui JavaScript -->
+                                    </select>
+                                </div>
                             </div>
                             <script>
-                                // Mendapatkan elemen dengan class "ortu_hubungan"
-                                var ortuHubunganElement = document.querySelector('.ortu_hubungan');
+                                let hubungan = document.querySelector('.hubungan');
+                                let selectElement = hubungan.querySelector('select');
 
-                                // Mendapatkan nilai dari elemen "ortu_hubungan"
-                                var ortuHubunganValue = ortuHubunganElement.value;
+                                // Buat elemen-elemen <option>
+                                let option1 = document.createElement('option');
+                                option1.value = 'ayah';
+                                option1.textContent = 'Ayah';
 
-                                // Menampilkan nilai dalam konsol
-                                console.log(ortuHubunganValue);
+                                let option2 = document.createElement('option');
+                                option2.value = 'ibu';
+                                option2.textContent = 'Ibu';
+
+                                let option3 = document.createElement('option');
+                                option3.value = 'wali';
+                                option3.textContent = 'Wali';
+
+                                // Tambahkan elemen <option> ke dalam elemen <select>
+                                selectElement.appendChild(option1);
+                                selectElement.appendChild(option2);
+                                selectElement.appendChild(option3);
                             </script>
+
+
+
+
+
+
+
 
 
 
