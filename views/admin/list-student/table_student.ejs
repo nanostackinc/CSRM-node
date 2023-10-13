@@ -1,0 +1,62 @@
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">
+            <i class="fas fa-plus"></i>
+        </button>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>No Absen</th>
+                        <th>Nama</th>
+                        <th>Tanggal Lahir</th>
+                        <th>Alamat</th>
+                        <th>No. HP</th>
+                        <th>Orang tua</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let i = 0; i < student.length; i++){ %>
+                    <tr>
+                        <td><%= i + 1 %></td>
+                        <td><%= student[i].no_absen %></td>
+                        <td><%= student[i].nama %></td>
+                        <td><%= student[i].tanggal_lahir %></td>
+                        <td><%= student[i].alamat %></td>
+                        <td><%= student[i].no_hp %></td>
+                        <td><a href="javascript:void();" id="show-parents" type="button"
+                                style="text-decoration: none;color:#858796;" data-nama="<%= student[i].orang_tua.nama%>"
+                                data-hubungan="<%= student[i].orang_tua.relationId%>"
+                                data-pekerjaan="<%= student[i].orang_tua.pekerjaan%>"
+                                data-alamat="<%= student[i].orang_tua.alamat%>" data-id="<%= student[i].no %>"
+                                data-ortu-hubungan="<%= student[i].orang_tua.relationId %>"
+                                data-no-hp="<%= student[i].orang_tua.no_hp%>" "><%= student[i].orang_tua.nama %></a></td>
+                        <td>
+
+                            <form action="/admin/class/"> <a href="javascript:void();" type="button"
+                                class="btn btn-warning btn-circle btn-sm button-update" data-id="<%= student[i].no %>"
+                                data-nama="<%= student[i].nama %>" data-tanggal-lahir="<%= student[i].tanggal_lahir %>"
+                                data-alamat="<%= student[i].alamat %>" data-no_hp="<%= student[i].no_hp %>"
+                                data-ortu-nama="<%= student[i].orang_tua.nama %>"
+                                data-ortu-pekerjaan="<%= student[i].orang_tua.pekerjaan %>"
+                                data-ortu-alamat="<%= student[i].orang_tua.alamat %>"
+                                data-ortu-no_hp="<%= student[i].orang_tua.no_hp %>"
+                                data-ortu-hubungan="<%= student[i].orang_tua.relationId %>" "><i
+                    class=" fas fa-edit"></i></a>
+                            <button type="submit" class="btn btn-danger btn-circle btn-sm"><i
+                                    class="fas fa-trash"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% } %>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
